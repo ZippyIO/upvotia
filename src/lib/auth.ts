@@ -1,6 +1,6 @@
 import { PrismaAdapter } from '@auth/prisma-adapter';
 
-import { type NextAuthOptions } from 'next-auth';
+import { getServerSession as naGetServerSession, type NextAuthOptions } from 'next-auth';
 import { type Adapter } from 'next-auth/adapters';
 import DiscordProvider from 'next-auth/providers/discord';
 
@@ -34,3 +34,7 @@ export const nextAuthOptions: NextAuthOptions = {
     },
   },
 };
+
+export async function getServerSession() {
+  return await naGetServerSession(nextAuthOptions);
+}
