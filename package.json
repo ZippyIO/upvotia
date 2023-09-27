@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "studio": "prisma studio",
+    "db:gen": "prisma generate",
+    "db:push": "prisma db push",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
