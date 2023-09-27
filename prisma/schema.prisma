@@ -77,5 +77,5 @@ model Post {
   authorId  String
   author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
   zoneId    String
-  Zone      Zone     @relation(fields: [zoneId], references: [id])
+  zone      Zone     @relation(fields: [zoneId], references: [id])
 }
