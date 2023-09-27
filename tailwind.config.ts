@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
+
 import { type Config } from 'tailwindcss';
 
 const config: Config = {
@@ -13,6 +16,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    addDynamicIconSelectors({
+      prefix: 'i',
+    }),
+  ],
 };
 export default config;
