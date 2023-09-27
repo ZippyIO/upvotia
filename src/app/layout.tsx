@@ -13,6 +13,8 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
+import QueryProvider from '~/components/providers/QueryProvider';
 import { cn } from '~/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -28,7 +30,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <ColorSchemeScript forceColorScheme="dark" />
       </head>
       <body className={cn(inter.className, 'bg-[var(--mantine-color-dark-9)]')}>
-        <MantineProvider forceColorScheme="dark">{children}</MantineProvider>
+        <MantineProvider forceColorScheme="dark">
+          <QueryProvider>{children}</QueryProvider>
+        </MantineProvider>
       </body>
     </html>
   );

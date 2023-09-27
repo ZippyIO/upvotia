@@ -50,6 +50,12 @@ dependencies:
   '@tabler/icons-react':
     specifier: ^2.35.0
     version: 2.35.0(react@18.2.0)
+  '@tanstack/react-query':
+    specifier: 5.0.0-rc.1
+    version: 5.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+  '@tanstack/react-query-devtools':
+    specifier: 5.0.0-rc.1
+    version: 5.0.0-rc.1(@tanstack/react-query@5.0.0-rc.1)(react-dom@18.2.0)(react@18.2.0)
   '@tiptap/extension-link':
     specifier: ^2.1.11
     version: 2.1.11(@tiptap/core@2.1.11)(@tiptap/pm@2.1.11)
@@ -710,6 +716,45 @@ packages:
 
   /@tabler/icons@2.35.0:
     resolution: {integrity: sha512-qW/itKdmFvfGw6mAQ+cZy+2MYTXb0XdGAVhO3obYLJEfsSPMwQRO0S9ckFk1xMQX/Tj7REC3TEmWUBWNi3/o3g==}
+    dev: false
+
+  /@tanstack/query-core@5.0.0-rc.1:
+    resolution: {integrity: sha512-6jzPCwvEHS+Y3QCildpOlIrqJXXJ+v2EvbtCnbKUi6FpOrrfoSPacVB3nr0cjSBG/rCXnTB0aaevx9T8iT9CrQ==}
+    dev: false
+
+  /@tanstack/query-devtools@5.0.0-rc.1:
+    resolution: {integrity: sha512-33ECTglWAllVT6IfUhqvgKbJulOtOP8+z9W/i0FlmWKNaEwzaR8lpa4pOCyLCZA2p5XW97nSJ/JfPOzeYQN/jQ==}
+    dev: false
+
+  /@tanstack/react-query-devtools@5.0.0-rc.1(@tanstack/react-query@5.0.0-rc.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-RG/ffNv8ZdMPdoIZZrO7jS0DXZ6h0vKxkLbE5A1FET9UzHQ0EFnjc+pw0plC3x9z61bSsT0wPujgDqwOyoK6pg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.0.0-rc.1
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@tanstack/query-devtools': 5.0.0-rc.1
+      '@tanstack/react-query': 5.0.0-rc.1(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-query@5.0.0-rc.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-hFz2j/pp+faqwaBbp0KV8kgn01GfErfA1BtcwHVE/E+GJINU2ZOAiVJ43LR05JCWnIu4b9pAnOBMHv55GshMZQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 5.0.0-rc.1
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@tiptap/core@2.1.11(@tiptap/pm@2.1.11):
