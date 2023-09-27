@@ -1,3 +1,5 @@
+import { Text, Title } from '@mantine/core';
+
 import { db } from '~/lib/db';
 
 async function getZonePost(id: string) {
@@ -16,11 +18,11 @@ const ZonePostPage = async ({ params }: { params: { postid: string } }) => {
   const zonePost = await getZonePost(params.postid);
 
   return (
-    <main>
-      <h2>ZonePostPage</h2>
-      <p>{params.postid}</p>
-      <p>{zonePost.title}</p>
-      <p>{zonePost.content}</p>
+    <main className="flex flex-col items-center">
+      <Title order={2}>{zonePost.title}</Title>
+      <div className="max-w-prose">
+        <Text>{zonePost.content}</Text>
+      </div>
     </main>
   );
 };
