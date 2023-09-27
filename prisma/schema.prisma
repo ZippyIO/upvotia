@@ -45,6 +45,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  Zone          Zone[]
+  Post          Post[]
 }
 
 model VerificationToken {
@@ -53,4 +55,27 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Zone {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  creatorId   String
+  creator     User     @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  posts       Post[]
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  zoneId    String
+  Zone      Zone     @relation(fields: [zoneId], references: [id])
 }
